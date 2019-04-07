@@ -22,7 +22,6 @@ public class ReguladorIT {
     public void testRegulate() {
         
         Thermometer detector = new SensorRemoto();
-        
         Heater estufita = new Estufa();
         double maxTemperatura=22d;
         double minTemperatura=15d;

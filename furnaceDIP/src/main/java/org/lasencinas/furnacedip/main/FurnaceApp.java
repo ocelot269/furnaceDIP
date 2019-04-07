@@ -8,6 +8,7 @@ import org.lasencinas.furnacedip.interfaces.Thermometer;
 import org.lasencinas.furnacedip.clases.NachoVidal;
 import org.lasencinas.furnacedip.clases.Estufa;
 import org.lasencinas.furnacedip.clases.Habitacion;
+import org.lasencinas.furnacedip.interfaces.regulable;
 
 
 public class FurnaceApp {
@@ -23,13 +24,13 @@ public class FurnaceApp {
         Heater heater = new Estufa();
         Thermometer thermometer = new SensorRemoto();
         
-        Regulador regulator = new Regulador();
+        regulable regulator = new Regulador();
         
         System.out.println( "Arrancando..." );
         regulator.regulate(thermometer, heater, minTemp, maxTemp, Habitacion.getLaHabitacion());
         
         NachoVidal nachete = new NachoVidal();
-        System.out.println( "\nArrancando a nacho: " );
+        System.out.println( "\nArrancando a nachete: " );
         regulator.regulate(thermometer, nachete, minTemp, maxTemp, Habitacion.getLaHabitacion());
         nachete.speak();
     }

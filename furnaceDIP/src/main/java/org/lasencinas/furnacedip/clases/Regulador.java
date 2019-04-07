@@ -7,8 +7,9 @@ import org.lasencinas.furnacedip.interfaces.Heater;
 import org.lasencinas.furnacedip.interfaces.Thermometer;
 import org.lasencinas.furnacedip.enumType.MensajesTemperatura;
 import org.lasencinas.furnacedip.clases.Habitacion;
+import org.lasencinas.furnacedip.interfaces.regulable;
 
-public class Regulador {
+public class Regulador implements regulable{
 	
 	public void regulate(Thermometer t, Heater h, double minTemp, double maxTemp, Habitacion temperature) {
 		MensajesTemperatura code;
@@ -24,7 +25,8 @@ public class Regulador {
 		}
 	}
 
-	private void message(MensajesTemperatura code, Habitacion temperature) {
+        @Override
+	public void message(MensajesTemperatura code, Habitacion temperature) {
 		switch (code) {
 			case CALENTADO:
 			System.out.println("Calentando => temperatura " + temperature.getTemperaturaHabitacion());

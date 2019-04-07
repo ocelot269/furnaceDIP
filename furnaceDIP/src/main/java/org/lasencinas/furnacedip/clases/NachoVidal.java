@@ -19,7 +19,8 @@ public class NachoVidal implements Heater{
     
     
     public void speak(){
-            System.out.println("...........///_\\\\ \n" +
+            System.out.println("\nSe viene" + "\n" +
+"...........///_\\\\ \n" +
 "..........||.^|^\\ \n" +
 "..........))_-_/ (( \n" +
 "..........)'_/.\"._`) \n" +
