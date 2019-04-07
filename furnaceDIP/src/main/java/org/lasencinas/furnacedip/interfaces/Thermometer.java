@@ -1,7 +1,9 @@
 
 package org.lasencinas.furnacedip.interfaces;
 
+import org.lasencinas.furnacedip.clases.Habitacion;
+
 
 public interface Thermometer {
-    void read(int temperatura);
+    double read(Habitacion temperatura);
 }

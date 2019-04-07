@@ -10,7 +10,7 @@ import org.lasencinas.furnacedip.clases.Habitacion;
 
 public class Regulador {
 	
-	public void regulate(Thermometer t, Heater h, double minTemp, double maxTemp, RoomTemperature temperature) {
+	public void regulate(Thermometer t, Heater h, double minTemp, double maxTemp, Habitacion temperature) {
 		MensajesTemperatura code;
 		while (t.read(temperature) < maxTemp) {
 			code = MensajesTemperatura.CALENTADO;
@@ -24,13 +24,13 @@ public class Regulador {
 		}
 	}
 
-	private void message(MensajesTemperatura code, RoomTemperature temperature) {
+	private void message(MensajesTemperatura code, Habitacion temperature) {
 		switch (code) {
 			case CALENTADO:
-			System.out.println("Calentando => temperatura " + temperature.getTemperature());
+			System.out.println("Calentando => temperatura " + temperature.getTemperaturaHabitacion());
 				break;
 			case RECALENTANDO:
-				System.out.println("Apagado => temperatura " + temperature.getTemperature());
+				System.out.println("Apagado => temperatura " + temperature.getTemperaturaHabitacion());
 				break;
 			default:
 				System.out.println("Algo raro sucede...");
