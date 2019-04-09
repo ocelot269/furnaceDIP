@@ -29,9 +29,10 @@ public class FurnaceApp {
         System.out.println( "Arrancando..." );
         regulator.regulate(thermometer, heater, minTemp, maxTemp, Habitacion.getLaHabitacion());
         
-        NachoVidal nachete = new NachoVidal();
+        Heater nachete = new NachoVidal();
         System.out.println( "\nArrancando a nachete: " );
         regulator.regulate(thermometer, nachete, minTemp, maxTemp, Habitacion.getLaHabitacion());
-        nachete.speak();
+        NachoVidal nachito =(NachoVidal)nachete;
+        nachito.speak();
     }
 }

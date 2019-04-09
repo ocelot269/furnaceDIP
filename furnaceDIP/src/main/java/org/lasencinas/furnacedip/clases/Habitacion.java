@@ -4,7 +4,7 @@ public class Habitacion {
 
     //variables
     private double temperaturaHabitacion;
-    private static Habitacion laHabitacion;
+    private static Habitacion LAHABITACION;
     
     
     //Constructor privado
@@ -15,7 +15,7 @@ public class Habitacion {
     //Metodo Singleton 
     public static Habitacion getSingletonInstance(double temperatura) {
         if (getLaHabitacion() == null) {
-            laHabitacion = new Habitacion(temperatura);
+            LAHABITACION = new Habitacion(temperatura);
         } else {
             System.out.println("No se puede crear el objeto porque ya existe un objeto de la clase Habitacion");
         }
@@ -53,7 +53,7 @@ public class Habitacion {
     }
 
     public static Habitacion getLaHabitacion() {
-        return laHabitacion;
+        return LAHABITACION;
     }
     
 }
